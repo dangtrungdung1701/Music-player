@@ -7,8 +7,11 @@ function Player(props) {
   const audioEl = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState(0);
+  const [volume, setVolume] = useState(10);
   const [durTime, setDurTime] = useState(0);
   const [currTime, setCurrTime] = useState(0);
+  const [isMute, setIsMute] = useState(false);
+  const [isSuffle, setIsSuffle] = useState(false);
   const min = (time) => {
     return time >= 60
       ? Math.floor(time / 60) < 10
@@ -32,6 +35,13 @@ function Player(props) {
       audioEl.current.pause();
     }
   });
+  useEffect(() => {
+    if (isMute) {
+      audioEl.current.muted = true;
+    } else {
+      audioEl.current.muted = false;
+    }
+  }, [isMute]);
   const getCurrDuration = (e) => {
     const time = (
       (e.currentTarget.currentTime / e.currentTarget.duration) *
@@ -91,9 +101,15 @@ function Player(props) {
       </p>
       <Slider value={time} onChange={onChange} />
       <PlayerControl
+        isMute={isMute}
         isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
+        setIsPlaying={(val) => setIsPlaying(val)}
         SkipSong={SkipSong}
+        setIsMute={setIsMute}
+        volume={volume}
+        setVolume={setVolume}
+        isSuffle={isSuffle}
+        setIsSuffle={setIsSuffle}
       />
       <p>
         <strong>Next up: </strong>

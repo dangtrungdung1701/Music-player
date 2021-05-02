@@ -29,16 +29,18 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  flex: 1;
+  flex-direction: row;
 }
 .c-player {
-  max-height: 95vh;
+  flex: 1;
   display: block;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 50px;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  margin: auto;
+  margin: 10px 0;
 }
 .c-player > h4 {
   color: #fff;
@@ -111,11 +113,50 @@ body {
 }
 .c-player-controls {
   display: flex;
+  margin-bottom: 25px;
+  flex-direction: column;
+}
+.c-player-controls > .c-player-controls-plus {
+  display: flex;
+  flex-direction: row;
+  /* margin-bottom: 15px; */
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;
+}
+.c-player-controls > .c-player-controls-plus > .volume-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.c-player-controls > .c-player-controls-plus > .volume-container > button {
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
 }
-.c-player-controls > button {
+.c-player-controls
+  > .c-player-controls-plus
+  > .volume-container
+  > button
+  > .slider {
+  display: none;
+}
+.c-player-controls
+  > .c-player-controls-plus
+  > .volume-container
+  > button:hover
+  > .slider {
+  display: flex;
+  width: 75px;
+  margin-left: 18px;
+}
+.c-player-controls > .c-player-controls-traditional {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.c-player-controls > .c-player-controls-traditional > button {
   display: flex;
   margin: 0 30px;
   font-size: 18px;
@@ -123,11 +164,19 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
-.c-player-controls .play-btn {
+.c-player-controls > .c-player-controls-traditional > .play-btn {
   font-size: 30px;
 }
-.c-player-controls > button:hover {
+.c-player-controls > .c-player-controls-traditional > button:hover {
   filter: blur(2px);
+}
+.c-player-controls button {
+  display: flex;
+  margin: 0 30px;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .MuiSlider-root:hover > .MuiSlider-rail,
 .MuiSlider-root:hover > .MuiSlider-track {
