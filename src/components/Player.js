@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PlayerControl from "./PlayerControl";
 import PlayerDetail from "./PlayerDetail";
 import { Slider } from "@material-ui/core";
+import PlayerHeader from "./PlayerHeader";
 
 function Player(props) {
   const audioEl = useRef(null);
@@ -91,15 +92,20 @@ function Player(props) {
         }}
         onTimeUpdate={getCurrDuration}
       ></audio>
-      <h4>Playing now</h4>
+      <PlayerHeader />
       <PlayerDetail
         isPlaying={isPlaying}
         song={props.songs[props.currentSongIndex]}
       />
-      <p>
-        {min(currTime)}:{sec(currTime)} / {min(durTime)}:{sec(durTime)}
-      </p>
-      <Slider value={time} onChange={onChange} />
+      <div className="time-container">
+        <p>
+          {min(currTime)}:{sec(currTime)}
+        </p>
+        <p>
+          {min(durTime)}:{sec(durTime)}
+        </p>
+      </div>
+      <Slider value={time} onChange={onChange} className="slider" />
       <PlayerControl
         isMute={isMute}
         isPlaying={isPlaying}
@@ -115,7 +121,7 @@ function Player(props) {
         <strong>Next up: </strong>
         {props.songs[props.nextSongIndex].title}
         <br />
-        <strong>Artis: </strong> {props.songs[props.nextSongIndex].artist}
+        <strong>Artist: </strong> {props.songs[props.nextSongIndex].artist}
       </p>
     </div>
   );

@@ -40,14 +40,12 @@ function App() {
   }, [currentSongIndex]);
   return (
     <div className="App">
-      <div style={{ flex: 1 }}></div>
       <Player
         currentSongIndex={currentSongIndex}
         nextSongIndex={nextSongIndex}
         setCurrentSongIndex={setCurrentSongIndex}
         songs={songs}
       />
-      <div style={{ flex: 1 }}></div>
     </div>
   );
 }
