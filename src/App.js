@@ -3,28 +3,28 @@ import Player from "./components/Player";
 function App() {
   const [songs, setSongs] = useState([
     {
-      title: "Forget me too ft. Halsey",
-      artist: "Machine Gun Kelly",
+      title: "3 1 0 7 rap",
+      artist: "Dung",
       img_src: "./images/song-1.jpg",
-      src: "./music/public_music_on-n-on.mp3",
+      src: "./music/3 1 0 7 rap.m4a",
     },
     {
-      title: "Song 2",
-      artist: "Artist 2",
+      title: "Ai rồi cũng bỏ anh đi",
+      artist: "Dung",
       img_src: "./images/song-2.jpg",
-      src: "./music/public_music_somebody-new.mp3",
+      src: "./music/Ai rồi cũng bỏ anh đi.m4a",
     },
     {
-      title: "Song 3",
-      artist: "Artist 3",
+      title: "Cỏ gió và mây",
+      artist: "Dung",
       img_src: "./images/song-3.jpg",
-      src: "./music/public_music_on-n-on.mp3",
+      src: "./music/Cỏ gió và mây.m4a",
     },
     {
-      title: "Song 4",
-      artist: "Artist 4",
+      title: "FA",
+      artist: "Dung",
       img_src: "./images/song-4.jpg",
-      src: "./music/public_music_somebody-new.mp3",
+      src: "./music/FA.m4a",
     },
   ]);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);

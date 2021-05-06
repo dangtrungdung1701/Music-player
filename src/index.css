@@ -81,6 +81,65 @@ body {
   align-items: center;
   justify-content: center;
 }
+.c-player > .c-player-header > .menu-container {
+  position: relative;
+  display: inline-block;
+}
+.c-player > .c-player-header > .menu-container > .menu-extend {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  z-index: 1;
+  border-radius: 10px;
+}
+.c-player > .c-player-header > .menu-container > .menu-extend.extend {
+  display: block;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.c-player > .c-player-header > .menu-container > button {
+  margin: 5px 0;
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.c-player > .c-player-header > .menu-container > button:hover {
+  margin: 5px 0;
+  height: 30px;
+  width: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.c-player > .c-player-header > .menu-container > .menu-extend > button {
+  margin: 10px 0;
+}
 .c-player-details .details-img {
   position: relative;
   width: fit-content;
@@ -192,7 +251,6 @@ body {
 }
 button {
   display: flex;
-  margin: 0 30px;
   font-size: 18px;
   border: none;
   background-color: transparent;

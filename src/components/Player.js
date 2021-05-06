@@ -52,6 +52,19 @@ function Player(props) {
 
     setTime(time);
     setCurrTime(currentTime.toFixed(2));
+    console.log(time);
+    if (time >= 100) {
+      props.setCurrentSongIndex(() => {
+        let temp = props.currentSongIndex;
+        temp++;
+
+        if (temp > props.songs.length - 1) {
+          temp = 0;
+        }
+        setTime(0);
+        return temp;
+      });
+    }
   };
   const onChange = (e, newValue) => {
     audioEl.current.currentTime = (durTime / 100) * newValue;
