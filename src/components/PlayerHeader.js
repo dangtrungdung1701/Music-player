@@ -7,12 +7,15 @@ import {
   faPlus,
   faList,
 } from "@fortawesome/free-solid-svg-icons";
+import PopUp from "./PopUp";
 
 function PlayerHeader() {
   // console.log(props.isExtend);
   const extendClass = ["menu-extend"];
   const [isExtend, setIsExtend] = useState(true);
   const [exClass, setExClass] = useState("menu-extend");
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [content, setContent] = useState("");
   const handleExtend = () => {
     setIsExtend(!isExtend);
     console.log(isExtend);
@@ -21,7 +24,6 @@ function PlayerHeader() {
     }
     setExClass(extendClass.join(" "));
   };
-
   return (
     <div className="c-player-header">
       <button className="back-btn">
@@ -37,9 +39,11 @@ function PlayerHeader() {
               icon={faHeart}
               onClick={() => {
                 handleExtend();
+                setShowPopUp(!showPopUp);
+                setContent("Đã thêm vào danh sách yêu thích");
                 setTimeout(function () {
-                  alert("Đã thêm vào danh sách yêu thích");
-                }, 300);
+                  setShowPopUp(!showPopUp);
+                }, 1000);
               }}
             />
           </button>
@@ -48,9 +52,8 @@ function PlayerHeader() {
               icon={faPlus}
               onClick={() => {
                 handleExtend();
-                setTimeout(function () {
-                  alert("Đã thêm vào danh sách phát");
-                }, 300);
+                setShowPopUp(!showPopUp);
+                setContent("Đã thêm vào danh sách phát");
               }}
             />
           </button>
@@ -59,14 +62,20 @@ function PlayerHeader() {
               icon={faList}
               onClick={() => {
                 handleExtend();
-                setTimeout(function () {
-                  alert("Danh sách phát");
-                }, 300);
+                setShowPopUp(!showPopUp);
+                setContent("Danh sách phát");
               }}
             />
           </button>
         </div>
       </div>
+      {showPopUp ? (
+        <PopUp
+          text={content}
+          setShowPopUp={setShowPopUp}
+          showPopUp={showPopUp}
+        />
+      ) : null}
     </div>
   );
 }
