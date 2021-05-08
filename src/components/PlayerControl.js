@@ -13,7 +13,7 @@ import {
 import { Slider } from "@material-ui/core";
 function PlayerControl(props) {
   const onChangeVolume = (e, newValue) => {
-    props.audio.volume = (1 / 10) * newValue;
+    // props.audio.volume = (1 / 10) * newValue;
     props.setVolume(newValue);
   };
   return (

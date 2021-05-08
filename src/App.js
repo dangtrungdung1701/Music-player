@@ -3,9 +3,9 @@ import Player from "./components/Player";
 function App() {
   const [songs, setSongs] = useState([
     {
-      title: "3 1 0 7 rap",
+      title: "Dung",
       artist: "Dung",
-      img_src: "../build/images/song-1.jpg",
+      img_src: "./images/song-1.jpg",
       src: "./music/3 1 0 7 rap.m4a",
     },
     {

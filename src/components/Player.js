@@ -129,7 +129,7 @@ function Player(props) {
         setVolume={setVolume}
         isSuffle={isSuffle}
         setIsSuffle={setIsSuffle}
-        // audio={audioEl.current}
+        audio={audioEl.current}
       />
       <p>
         <strong>Next up: </strong>
