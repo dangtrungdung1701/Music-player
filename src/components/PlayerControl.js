@@ -12,6 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Slider } from "@material-ui/core";
 function PlayerControl(props) {
+  const onChangeVolume = (e, newValue) => {
+    props.audio.volume = (1 / 10) * newValue;
+    props.setVolume(newValue);
+  };
   return (
     <div className="c-player-controls">
       <div className="c-player-controls-plus">
@@ -32,7 +36,7 @@ function PlayerControl(props) {
               }}
             />
             <div className="slider">
-              <Slider max={10} value={props.volume} />
+              <Slider max={10} value={props.volume} onChange={onChangeVolume} />
             </div>
           </button>
         </div>

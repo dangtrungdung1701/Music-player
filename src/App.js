@@ -5,7 +5,7 @@ function App() {
     {
       title: "3 1 0 7 rap",
       artist: "Dung",
-      img_src: "./images/song-1.jpg",
+      img_src: "../build/images/song-1.jpg",
       src: "./music/3 1 0 7 rap.m4a",
     },
     {
