@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -12,8 +12,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Slider } from "@material-ui/core";
 function PlayerControl(props) {
+  const [currVolume, setCurrVolume] = useState(10);
   const onChangeVolume = (e, newValue) => {
-    // props.audio.volume = (1 / 10) * newValue;
+    props.audio.volume = (1 / 10) * newValue;
     props.setVolume(newValue);
   };
   return (
@@ -23,16 +24,13 @@ function PlayerControl(props) {
           <button className="volume-btn">
             <FontAwesomeIcon
               className="volume-icon"
-              icon={
-                props.volume >= 5
-                  ? faVolumeUp
-                  : props.volume > 0
-                  ? faVolumeDown
-                  : faVolumeMute
-              }
+              icon={props.volume > 0 ? faVolumeUp : faVolumeMute}
               onClick={() => {
+                if (!props.isMute) {
+                  setCurrVolume(props.audio.volume * 10);
+                }
                 props.setIsMute(!props.isMute);
-                props.setVolume(!props.isMute ? 0 : 10);
+                props.setVolume(!props.isMute ? 0 : currVolume);
               }}
             />
             <div className="slider">

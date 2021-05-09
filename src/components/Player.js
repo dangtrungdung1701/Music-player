@@ -52,7 +52,6 @@ function Player(props) {
 
     setTime(time);
     setCurrTime(currentTime.toFixed(2));
-    console.log(time);
     if (time >= 100 && isPlaying) {
       props.setCurrentSongIndex(() => {
         let temp = props.currentSongIndex;

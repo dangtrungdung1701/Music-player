@@ -228,7 +228,7 @@ body {
   > .slider {
   display: none;
   width: 60px;
-  margin-left: 18px;
+  margin-left: 20px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -241,7 +241,7 @@ body {
   > .slider {
   display: flex;
   width: 60px;
-  margin-left: 18px;
+  margin-left: 20px;
 }
 .c-player-controls > .c-player-controls-traditional {
   display: flex;
