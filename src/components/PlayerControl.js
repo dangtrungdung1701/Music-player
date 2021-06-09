@@ -11,6 +11,7 @@ import {
   faVolumeDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { Slider } from "@material-ui/core";
+import "./styles/player-controls.css";
 function PlayerControl(props) {
   const [currVolume, setCurrVolume] = useState(10);
   const onChangeVolume = (e, newValue) => {

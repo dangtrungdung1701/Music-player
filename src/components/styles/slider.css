@@ -1,0 +1,10 @@
+.MuiSlider-root {
+  padding: 20px 0;
+}
+.MuiSlider-root:hover > .MuiSlider-rail,
+.MuiSlider-root:hover > .MuiSlider-track {
+  height: 4px;
+}
+.MuiSlider-root:hover > .MuiSlider-thumb {
+  box-shadow: 0px 0px 0px 8px rgba(63, 81, 181, 0.16);
+}

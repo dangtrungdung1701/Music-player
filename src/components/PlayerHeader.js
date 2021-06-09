@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
@@ -8,9 +8,9 @@ import {
   faList,
 } from "@fortawesome/free-solid-svg-icons";
 import PopUp from "./PopUp";
+import "./styles/player-header.css";
 
 function PlayerHeader() {
-  // console.log(props.isExtend);
   const extendClass = ["menu-extend"];
   const [isExtend, setIsExtend] = useState(true);
   const [exClass, setExClass] = useState("menu-extend");
@@ -18,7 +18,6 @@ function PlayerHeader() {
   const [content, setContent] = useState("");
   const handleExtend = () => {
     setIsExtend(!isExtend);
-    console.log(isExtend);
     if (isExtend) {
       extendClass.push("extend");
     }
@@ -39,11 +38,10 @@ function PlayerHeader() {
               icon={faHeart}
               onClick={() => {
                 handleExtend();
-                setShowPopUp(!showPopUp);
-                setContent("Đã thêm vào danh sách yêu thích");
-                setTimeout(function () {
+                if (!showPopUp) {
                   setShowPopUp(!showPopUp);
-                }, 1000);
+                  setContent("Đã thêm vào danh sách yêu thích");
+                }
               }}
             />
           </button>
@@ -52,8 +50,10 @@ function PlayerHeader() {
               icon={faPlus}
               onClick={() => {
                 handleExtend();
-                setShowPopUp(!showPopUp);
-                setContent("Đã thêm vào danh sách phát");
+                if (!showPopUp) {
+                  setShowPopUp(!showPopUp);
+                  setContent("Đã thêm vào danh sách phát");
+                }
               }}
             />
           </button>
@@ -62,8 +62,10 @@ function PlayerHeader() {
               icon={faList}
               onClick={() => {
                 handleExtend();
-                setShowPopUp(!showPopUp);
-                setContent("Danh sách phát");
+                if (!showPopUp) {
+                  setShowPopUp(!showPopUp);
+                  setContent("Danh sách phát");
+                }
               }}
             />
           </button>

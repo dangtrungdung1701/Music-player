@@ -3,7 +3,8 @@ import PlayerControl from "./PlayerControl";
 import PlayerDetail from "./PlayerDetail";
 import { Slider } from "@material-ui/core";
 import PlayerHeader from "./PlayerHeader";
-
+import "./styles/player.css";
+import "./styles/slider.css";
 function Player(props) {
   const audioEl = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);

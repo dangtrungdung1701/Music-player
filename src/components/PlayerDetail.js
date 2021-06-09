@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/player-details.css";
 
 function PlayerDetail(props) {
   return (

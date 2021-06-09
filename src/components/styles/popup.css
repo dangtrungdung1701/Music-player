@@ -1,0 +1,41 @@
+.popup {
+  position: absolute;
+  width: 300px;
+  height: 70px;
+  overflow-x: hidden;
+  bottom: 16px;
+  right: 16px;
+}
+.popup > .popup_inner {
+  position: fixed;
+  border-radius: 10px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  flex-direction: column;
+  bottom: 16px;
+  right: 16px;
+  padding: 10px;
+}
+.popup > .popup_inner > button {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  right: -75px;
+  top: 0;
+  margin: 0 0 5px auto;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.popup > .popup_inner > button:hover {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  right: -75px;
+  top: 0;
+  margin: 0 0 5px auto;
+  transform: scale(1.05);
+}
